@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Customer Manager";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+ @*   <div class="col-sm-2">
+        <div class="list-group">
+            <a asp-controller="Customer" asp-action="List" asp-route-id="All"
+               class="list-group-item
+                @(ViewBag.SelectedCategoryName == "All" ? "active" : "")">
+                All
+            </a>
+            @foreach (Customer c in ViewBag.Customers)
+            {
+                <a asp-controller="Customer" asp-action="List" asp-route-id="@c."
+                   class="list-group-item
+                         @(ViewBag.SelectedCategoryName == c.Name ? "active" : "")">
+                    @c.Name
+                </a>
+            }
+        </div>
+    </div>*@
+
+    <div class="col-sm-10">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>City</th>
+                    <th></th>
+                    <th></th>
+            </thead>
+            <tbody>
+                @foreach (var customer in Model)
+                {
+                    <tr>
+                        <td>@customer.FirstName</td>
+                        <td>@customer.Email</td>
+                        <td>@customer.City</td>
+                        <td>
+                            <a asp-action="Edit"
+                               asp-route-id="@customer.CustomerId">Edit</a>
+                        </td>
+                        <td>
+                            <a asp-action="Delete"
+                               asp-route-id="@customer.ProductID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a asp-action="Add" class="btn btn-primary">Add Customer</a>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>a
+
+
+@{ 
+    Dictionary<string, string> dict = new Dictionary<string, string>()
+    {
+        {"Manage Products", "<tr><a class=\"nav-link text-dark\" asp-area=\"\" asp-controller=\"Home\" asp-action=\"Index\">Home</a></tr>" },
+        {"Manage Technicians", "<tr><a class=\"nav-link text-dark\" asp-area=\"\" asp-controller=\"Home\" asp-action=\"Index\">Home</a></tr>" },
+        {"Manage Customers", "<tr><a class=\"nav-link text-dark\" asp-area=\"\" asp-controller=\"Home\" asp-action=\"Index\">Home</a></tr>" },
+        {"Manage Incidents", "<tr><a class=\"nav-link text-dark\" asp-area=\"\" asp-controller=\"Home\" asp-action=\"Index\">Home</a></tr>" },
+        {"Manage Registration", "<tr><a class=\"nav-link text-dark\" asp-area=\"\" asp-controller=\"Home\" asp-action=\"Index\">Home</a></tr>" },
+    };
+}
+
+<h1>hello world</h1>
+
+<table class="table table-bordered table-striped">
+    <tbody>
+            @foreach (KeyValuePair<string, string> link in dict)
+            {
+
+            }
+    </tbody>
+</table>
