@@ -1,4 +1,5 @@
-#### Fuck the readme, it's now self documented. 
+
+
 
 ## Enter nuget console and type "Add-Migration Initial" after that's done type in "Database-Update"
 
